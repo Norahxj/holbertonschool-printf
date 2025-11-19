@@ -25,24 +25,24 @@ int _printf(const char *format, ...)
 				return (-1);
 
 			if (*format == 'c')
-				count += _Putchar(va_arg(args, int));
+				count += _putchar(va_arg(args, int));
 
 			else if (*format == 's')
-				count += Print_string(va_arg(args, char *));
+				count += print_string(va_arg(args, char*));
 
 			else if (*format == '%')
-				count += _Putchar('%');
+				count += _putchar('%');
 
 			else if (*format == 'd' || *format == 'i')
-				count += Print_number(va_arg(args, int));
+				count += print_number(va_arg(args, int));
 			else
 			{
-				count += _Putchar('%');
-				count += _Putchar(*format);
+				count += _putchar('%');
+				count += _putchar(*format);
 			}
 		}
 		else
-			count += _Putchar(*format);
+			count += _putchar(*format);
 		format++;
 	}
 	va_end(args);
