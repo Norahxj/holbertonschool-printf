@@ -47,7 +47,7 @@ count += _putchar ('_');
 num = -n;
 }
 else
-num = n
+num = n;
 
 if (num / 10)
 count += print_number(num / 10);
