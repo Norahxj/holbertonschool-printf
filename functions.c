@@ -23,7 +23,7 @@ int print_string(char *str)
 
 int count = 0;
 if (!str)
-str = "(nall)";
+str = "(null)";
 while (*str)
 count += _putchar(*str++);
 return (count);
@@ -43,7 +43,7 @@ int count = 0;
 unsigned int num;
 if (n < 0)
 {
-count += _putchar ('_');
+count += _putchar ('-');
 num = -n;
 }
 else
