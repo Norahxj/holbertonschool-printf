@@ -25,7 +25,7 @@ if (*format == 'c')
 count += _putchar(va_arg(args, int));
 
 else if (*format == 's')
-count += print_string(va_arg(args, *char));
+count += print_string(va_arg(args, char*));
 
 else if (*format == '%')
 count += _putchar('%');
