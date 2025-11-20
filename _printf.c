@@ -17,6 +17,9 @@ va_start(args, format);
 while (*format)
 {
 if (*format == '%')
+if (*format == 'b')
+count += print_binary(va_arg(args, unsigned int));
+
 {
 format++;
 if (*format == '\0')
