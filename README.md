@@ -1,4 +1,4 @@
-# 💿💡( _printf) Custom Implementation of the C printf Function💡💿
+# 💿�
 
 - This repository contains some of implementations of the standard `printf` function in C, as part of the **Holberton School Low-Level Programming curriculum**.  
 
@@ -20,19 +20,17 @@ The main goal of this project is to understand the following:
 - Building a fully functional, production-style C library function.
 - Writing documentation through a UNIX manual page.
 
----
 
-## ⛓Repository Structure:
+## 📦 Repository Sucture:
 
 holbertonschool-printf/
 
-- README.md # Project documentation.
-- main.h # Header file with prototypes and include guards.
-- _printf.c # Core function: parses format string, handles specifiers.
-- functions.c # Helper functions (print_char, print_string, print_int, etc.).
-- man_3_printf # Manual page for the custom printf.
+- README.md # Project documentation
+- main.h # Header file with prototypes and include guards
+- _printf.c # Core function: parses format string, handles specifiers
+- functions.c # Helper functions (print_char, print_string, print_int, etc.)
+- man_3_printf # Manual page for the custom printf
 
----
 
 ## 📄 Description of each file:
 
@@ -86,7 +84,7 @@ A fully documented **UNIX manual page** describing:
 
 ---
 
-## 🧩 Supported Formapecifiers:
+## 🧩 Supported Format Specifi:
 
 Our custom `_printf` handles:
 
@@ -100,7 +98,7 @@ Our custom `_printf` handles:
 
 ---
 
-## 📋 Reuirements:
+## 📋 Requirement:
 
 - All code must comply with **Betty style**
 - Compiled on **Ubuntu 20.04 LTS** using gcc -Wall -Werror -Wextra -pedantic -std=gnu89
@@ -121,7 +119,7 @@ Our custom `_printf` handles:
 
 ---
 
-## 🛠️ Comption:
+## 🛠️ Compilation
 
 To compile the project:
 
@@ -130,7 +128,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
 ---
 
-▶️ Usage ples:
+▶️ Usage Examples
 _printf("Hello %s!\n", "World");
 _printf("Character: %c\n", 'A');
 _printf("Percent: %%\n");
@@ -139,13 +137,13 @@ _printf("Integer: %i\n", -456);
 
 ---
 
-🧪 Returnlue:
+🧪 Return Value
 
 _printf returns:
 
-- The total number of characters printed
+The total number of characters printed
 
-- -1 on error (such as NULL format string)
+-1 on error (such as NULL format string)
 
 ---
 
