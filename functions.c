@@ -3,13 +3,35 @@
  * _putchar - writes a character to stdout
  * @c: character to print
  *
+ * Description:
+ * Uses a static buffer of 1024 chars.
+ * Write is called only when buffer is full or when flushed.
+ *
  * Return: 1 on success
  */
 int _putchar (char c)
 {
-return (write(1, &c, 1));
-}
+	static char buffer[1024];
+	static int index;
 
+	if (c == -1) /* flush request */
+	{
+		if (index > 0)
+			write(1, buffer, index);
+		index = 0;
+		return (1);
+	}
+
+	buffer[index++] = c;
+
+	if (index == 1024)
+	{
+		write(1, buffer, 1024);
+		index = 0;
+	}
+
+	return (1);
+}
 
 /**
  * print_string - prints a string
