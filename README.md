@@ -1,4 +1,4 @@
-# 💿�
+# 💿💡( _printf) Custom Implementation of the C printf Function💡💿
 
 - This repository contains some of implementations of the standard `printf` function in C, as part of the **Holberton School Low-Level Programming curriculum**.  
 
@@ -20,8 +20,9 @@ The main goal of this project is to understand the following:
 - Building a fully functional, production-style C library function.
 - Writing documentation through a UNIX manual page.
 
+---
 
-## 📦 Repository Sucture:
+## ⛓Repository Structure:
 
 holbertonschool-printf/
 
@@ -31,6 +32,7 @@ holbertonschool-printf/
 - functions.c # Helper functions (print_char, print_string, print_int, etc.)
 - man_3_printf # Manual page for the custom printf
 
+---
 
 ## 📄 Description of each file:
 
@@ -84,7 +86,7 @@ A fully documented **UNIX manual page** describing:
 
 ---
 
-## 🧩 Supported Format Specifi:
+## 🧩 Supported FormSpecifiers:
 
 Our custom `_printf` handles:
 
@@ -98,7 +100,7 @@ Our custom `_printf` handles:
 
 ---
 
-## 📋 Requirement:
+## 📋 Requiremets:
 
 - All code must comply with **Betty style**
 - Compiled on **Ubuntu 20.04 LTS** using gcc -Wall -Werror -Wextra -pedantic -std=gnu89
@@ -119,7 +121,7 @@ Our custom `_printf` handles:
 
 ---
 
-## 🛠️ Compilation
+## 🛠�Compilation:
 
 To compile the project:
 
@@ -128,7 +130,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
 ---
 
-▶️ Usage Examples
+▶️ UsExamples:
 _printf("Hello %s!\n", "World");
 _printf("Character: %c\n", 'A');
 _printf("Percent: %%\n");
@@ -137,13 +139,13 @@ _printf("Integer: %i\n", -456);
 
 ---
 
-🧪 Return Value
+🧪 RetuValue:
 
 _printf returns:
 
-The total number of characters printed
+- The total number of characters printed
 
--1 on error (such as NULL format string)
+- -1 on error (such as NULL format string)
 
 ---
 

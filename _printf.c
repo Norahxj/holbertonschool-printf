@@ -34,6 +34,15 @@ else if (*format == 'd' || *format == 'i')
 count += print_number(va_arg(args, int));
 else if (*format == 'b')
 count += print_binary(va_arg(args, unsigned int));
+else if (*format == 'u')
+	count += print_unsigned(va_arg(args, unsigned int));
+else if (*format == 'o')
+	count += print_octal(va_arg(args, unsigned int));
+else if (*format == 'x')
+	count += print_hex(va_arg(args, unsigned int));
+else if (*format == 'X')
+	count += print_HEX(va_arg(args, unsigned int));
+
 else
 {
 count += _putchar('%');
