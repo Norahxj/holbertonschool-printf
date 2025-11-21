@@ -1,6 +1,6 @@
-# 💿💡( _printf) Custom Implementation of the C printf Function💡💿
+# 💿💡 ( _printf) Custom Implementation of the C printf Function 💡💿
 
-- This repository contains some of implementations of the standard `printf` function in C, as part of the **Holberton School Low-Level Programming curriculum**.  
+- This repository contains some of implementations of the standard `printf` function in C, as part of the **Holberton School Low-Level Programming curriculum**.
 
 - It illustrates the most commonly used format specifiers.
 
@@ -22,7 +22,7 @@ The main goal of this project is to understand the following:
 
 ---
 
-## ⛓Repository Structure:
+## ⛓ Repository Structure:
 
 holbertonschool-printf/
 
@@ -34,7 +34,7 @@ holbertonschool-printf/
 
 ---
 
-## 📄 Description of each file:
+## 📝 Description of Each File:
 
 ### **1. `README.md`**
 The file you are reading now.  
@@ -67,11 +67,11 @@ Its responsibilities include:
 ### **4. `functions.c`**
 Contains all helper functions used by `_printf`:
 
-- `print_char()` — prints a single character  
-- `print_string()` — prints a string  
-- `print_percent()` — prints a literal `%`  
-- `print_int()` — prints integers (`%d`, `%i`)  
-- `print_int_helper()` — assists printing digits recursively  
+- `print_char()` ~@~T prints a single character  
+- `print_string()` ~@~T prints a string  
+- `print_percent()` ~@~T prints a literal `%`  
+- `print_int()` ~@~T prints integers (`%d`, `%i`)  
+- `print_int_helper()` ~@~T assists printing digits recursively  
 
 ---
 
@@ -86,7 +86,7 @@ A fully documented **UNIX manual page** describing:
 
 ---
 
-## 🧩 Supported FormSpecifiers:
+## 🔎 Supported Format Specifiers:
 
 Our custom `_printf` handles:
 
@@ -100,7 +100,7 @@ Our custom `_printf` handles:
 
 ---
 
-## 📋 Requiremets:
+## ❗️ Requirements:
 
 - All code must comply with **Betty style**
 - Compiled on **Ubuntu 20.04 LTS** using gcc -Wall -Werror -Wextra -pedantic -std=gnu89
@@ -110,7 +110,8 @@ Our custom `_printf` handles:
 - A **README.md** file is mandatory
 - A **man_3_printf** file is mandatory
 - All files must end with a new line
-- Only allowed functions:
+
+## ✅ Only Allowed Functions:
 - `write`
 - `malloc`
 - `free`
@@ -121,16 +122,17 @@ Our custom `_printf` handles:
 
 ---
 
-## 🛠�Compilation:
+## 🎛 Compilation:
 
 To compile the project:
 
 ```bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
+```
 ---
 
-▶️ UsExamples:
+## ▶️ Usage Examples:
 _printf("Hello %s!\n", "World");
 _printf("Character: %c\n", 'A');
 _printf("Percent: %%\n");
@@ -139,7 +141,7 @@ _printf("Integer: %i\n", -456);
 
 ---
 
-🧪 RetuValue:
+## 🔁 Return Value:
 
 _printf returns:
 
@@ -149,6 +151,6 @@ _printf returns:
 
 ---
 
-Authors:
-* Norah Aljuhani 👩🏻‍💻 
+## Authors:
+* Norah Aljuhani 👩🏻‍💻
 * Randa Baeshen 👩🏻‍💻
