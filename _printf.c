@@ -42,6 +42,8 @@ else if (*format == 'x')
 	count += print_hex(va_arg(args, unsigned int));
 else if (*format == 'X')
 	count += print_HEX(va_arg(args, unsigned int));
+else if (*format == 'S')
+	count += print_S(va_arg(args, char *));
 
 else
 {

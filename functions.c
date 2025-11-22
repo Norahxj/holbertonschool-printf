@@ -165,3 +165,43 @@ int print_HEX(unsigned int n)
 
 return (count);
 }
+
+/**
+ * print_S - prints a string, handling non-printable characters as \xHH
+ * @str: string to print
+ *
+ * Return: number of characters printed
+ */
+int print_S(char *str)
+{
+    int count = 0;
+    int i;
+    unsigned char c;
+    char hex[2];
+
+    if (!str)
+        return (print_string("(null)"));
+
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        c = str[i];
+
+        if (c < 32 || c >= 127)
+        {
+            count += _putchar('\\');
+            count += _putchar('x');
+
+            hex[0] = "0123456789ABCDEF"[c / 16];
+            hex[1] = "0123456789ABCDEF"[c % 16];
+
+            count += _putchar(hex[0]);
+            count += _putchar(hex[1]);
+        }
+        else
+        {
+            count += _putchar(c);
+        }
+    }
+
+    return (count);
+}
