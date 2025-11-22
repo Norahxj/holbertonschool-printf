@@ -205,3 +205,37 @@ int print_S(char *str)
 
     return (count);
 }
+
+/**
+ * print_pointer - Prints a pointer address in hexadecimal format
+ * @p: Pointer to print
+ *
+ * Return: Number of characters printed
+ */
+int print_pointer(void *p)
+{
+    unsigned long addr;
+    int count = 0;
+    char hex_digits[] = "0123456789abcdef";
+    char buffer[20];
+    int i = 0;
+
+    if (p == NULL)
+        return (print_string("(nil)"));
+
+    addr = (unsigned long)p;
+
+    while (addr > 0)
+    {
+        buffer[i++] = hex_digits[addr % 16];
+        addr /= 16;
+    }
+
+    count += _putchar('0');
+    count += _putchar('x');
+
+    while (i > 0)
+        count += _putchar(buffer[--i]);
+
+    return (count);
+}
