@@ -1,60 +1,139 @@
-.TH _PRINTF 3 "November 2024" "Holberton School" "Library Functions Manual"
-
+.TH _PRINTF 3 "November 2025" "Holberton School – Custom Printf" "Library Functions Manual"
 
 .SH NAME
-_printf \- custom implementation of the C printf function
+_printf \- custom implementation of the standard printf function
+
 .SH SYNOPSIS
 .B #include "main.h"
-.br
+.sp
 .B int _printf(const char *format, ...);
-
 
 .SH DESCRIPTION
 The
 .B _printf()
-function produces output according to the provided
-.I format
-string.
+function produces output according to a format string and a variable
+list of arguments. It is a simplified re-implementation of the standard
+C library
+.B printf(3)
+function, supporting a selected set of conversion specifiers.
 
-Supported format specifiers:
+The
+.I format
+string contains ordinary characters, which are written as-is, and
+conversion directives which begin with the '%' character and determine
+how subsequent arguments are formatted.
+
+This implementation does \fInot\fR support flags, field width, precision,
+or length modifiers.
+
+.SH SUPPORTED CONVERSION SPECIFIERS
+
 .TP
 .B %c
 Prints a single character.
+
 .TP
 .B %s
 Prints a null-terminated string.
+If the argument is NULL, the string "(null)" is printed.
+
 .TP
 .B %%
-Prints a percent sign.
+Prints a literal '%' character.
+
 .TP
-.B %d , %i
-Prints a decimal integer.
+.B %d, %i
+Prints a signed decimal integer.
 
-The function handles variable arguments using
-.BR va_list ,
-.BR va_start ,
-and
-.BR va_end .
+.TP
+.B %u
+Prints an unsigned decimal integer.
 
+.TP
+.B %o
+Prints an unsigned integer in octal notation (base 8).
+
+.TP
+.B %x
+Prints an unsigned integer in lowercase hexadecimal.
+
+.TP
+.B %X
+Prints an unsigned integer in uppercase hexadecimal.
+
+.TP
+.B %b
+Prints an unsigned integer in binary (base 2).
+
+.TP
+.B %S
+Prints a string.
+Non-printable characters (ASCII < 32 or >= 127) are printed in the form:
+.RS
+\fB\\xHH\fR
+.RE
+where \fBHH\fR is the uppercase two-digit hexadecimal code.
+
+.TP
+.B %p
+Prints a pointer address in lowercase hexadecimal, prefixed with "0x".
+If the pointer is NULL, "(nil)" is printed.
+
+.SH BUFFERED OUTPUT
+All character output uses the internal
+.B _putchar()
+function, which stores characters in a static 1024-byte buffer.
+The buffer is automatically flushed when full.
+At the end of execution,
+.B _printf()
+forces a flush by calling:
+.RS
+_putchar(-1);
+.RE
+
+Using a local buffer minimizes the number of system calls to
+.BR write (2),
+improving performance.
 
 .SH RETURN VALUE
-Returns the number of characters printed (excluding the null byte).
-
-Returns \-1 if:
-.IP \(bu 2
-The format string is NULL.
-.IP \(bu 2
-A trailing % is found at the end of the format string.
-
+The
+.B _printf()
+function returns the total number of characters printed.
+If an error occurs, or if the format string is NULL or invalid
+(e.g., a trailing '%'), the function returns \-1.
 
 .SH EXAMPLES
-.nf
-_printf("Hello %s\\n", "world");
-_printf("Number: %d\\n", 98);
-_printf("Percent: %%\\n");
-.fi
 
+.TP
+Print a string:
+.RS
+_printf("Hello %s!\\n", "World");
+.RE
 
-.SH AUTHORS
-Randa Baeshen
-Norah ALjuhani
+.TP
+Print numbers:
+.RS
+_printf("Dec: %d Hex: %x Bin: %b\\n", 255, 255, 255);
+.RE
+
+.TP
+Custom %S:
+.RS
+_printf("%S\\n", "Best\\nSchool");
+.br
+Output: Best\\x0ASchool
+.RE
+
+.TP
+Pointer:
+.RS
+_printf("Address: %p\\n", ptr);
+.RE
+
+.SH SEE ALSO
+.BR printf(3),
+.BR write(2),
+.BR stdarg(3)
+
+.SH AUTHOR
+Custom implementation written by Randa Baeshen and Norah Aljuhani for the Holberton School printf project.
