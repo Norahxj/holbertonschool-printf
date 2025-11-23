@@ -4,7 +4,7 @@
 
 - It illustrates the most commonly used format specifiers.
 
-- The project consists of 3 mandatory tasks and another 14 advanced tasks.
+- The project consists of 3 mandatory tasks and another 16 advanced tasks.
 
 ---
 
@@ -133,11 +133,17 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 ---
 
 ## ▶️ Usage Examples:
-_printf("Hello %s!\n", "World");
-_printf("Character: %c\n", 'A');
-_printf("Percent: %%\n");
-_printf("Number: %d\n", 123);
-_printf("Integer: %i\n", -456);
+- _printf("Hello %s!\n", "World");
+- _printf("Character: %c\n", 'A');
+- _printf("Percent: %%\n");
+- _printf("Number: %d\n", 123);
+- _printf("Integer: %i\n", -456);
+
+---
+
+## 🧩 Flowchart Overview of `_printf`
+
+![Flowchart of _printf logic](flowchart_printf.png)
 
 ---
 
